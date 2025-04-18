@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lorenzo Montaño | Portafolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animaciones de entrada */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 scroll-smooth">
+
+  <!-- Header -->
+  <header class="p-6 bg-white shadow fixed top-0 left-0 w-full z-50">
+    <div class="max-w-5xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Lorenzo Montaño</h1>
+      <nav class="space-x-4">
+        <a href="#projects" class="hover:text-blue-500">Proyectos</a>
+        <a href="#contact" class="hover:text-blue-500">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-32 bg-gradient-to-r from-blue-600 to-green-400 text-white">
+    <h2 class="text-4xl font-extrabold mb-4 fade-up">Ingeniero Civil, Analista de Datos & Apasionado por la IA</h2>
+    <p class="text-lg max-w-xl mx-auto fade-up">
+      Especialista en análisis de datos, automatización con Python y entusiasta de la inteligencia artificial. Transformo datos en soluciones inteligentes para ingeniería y negocios.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20">
+    <div class="max-w-5xl mx-auto px-4">
+      <h3 class="text-3xl font-bold mb-12 text-center fade-up">Proyectos Destacados</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Proyecto 1 -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition fade-up">
+          <h4 class="text-xl font-semibold mb-2">Dashboard de Costos</h4>
+          <p class="text-sm text-gray-600">
+            Dashboard en Excel con macros y VBA para analizar costos de obra y automatizar reportes financieros mensuales.
+          </p>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition fade-up">
+          <h4 class="text-xl font-semibold mb-2">Pronóstico de Materiales</h4>
+          <p class="text-sm text-gray-600">
+            Modelo de series temporales en Python con Prophet para predecir demanda mensual de materiales.
+          </p>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition fade-up">
+          <h4 class="text-xl font-semibold mb-2">Automatización de Requisiciones</h4>
+          <p class="text-sm text-gray-600">
+            Script en Python que automatiza el proceso de requisiciones desde archivos CSV hasta envío por correo.
+          </p>
+        </div>
+
+        <!-- Proyecto 4 - IA -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition fade-up">
+          <h4 class="text-xl font-semibold mb-2">Asistente de Obra con IA</h4>
+          <p class="text-sm text-gray-600">
+            Prototipo de chatbot entrenado con datos de obra para responder dudas sobre procesos constructivos. Usando OpenAI API.
+          </p>
+        </div>
+
+        <!-- Proyecto 5 - Futuro -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition fade-up">
+          <h4 class="text-xl font-semibold mb-2">Proyecto en desarrollo</h4>
+          <p class="text-sm text-gray-600">
+            Aquí podrás mostrar futuros proyectos de automatización, IA o análisis de datos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contact" class="py-20 bg-gray-100">
+    <div class="max-w-xl mx-auto text-center fade-up">
+      <h3 class="text-3xl font-bold mb-4">Contáctame</h3>
+      <p class="mb-6 text-gray-700">Estoy abierto a colaborar en proyectos de análisis de datos, automatización o ingeniería.</p>
+      <a href="mailto:tu.correo@ejemplo.com" class="inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-full">
+        Enviar correo
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-gray-500">
+    © 2025 Lorenzo Montaño. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    // Efecto de animación cuando los elementos entran en viewport
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
